@@ -330,3 +330,21 @@ function play() {
         document.getElementsByClassName("table")[0].classList.remove("table-block");
     }
 }
+const cards = document.getElementsByClassName("card");
+for (let card of cards) {
+    card.addEventListener("click", function chooseCard() {
+        this.setAttribute("style", "animation: cardRotate 1s ease;");
+        this.getElementsByClassName("card__front")[0].setAttribute("style", "transform: rotateY(180deg);");
+        this.getElementsByClassName("card__back")[0].setAttribute("style", "transform: rotateY(360deg);");
+        setTimeout(modalAppear, 1500)
+
+    })
+}
+function modalAppear() {
+    document.getElementById("caption").style.display = "none";
+    document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    document.getElementById("modal").classList.remove("hidden");
+}
+function modalClose() {
+    document.location.reload(true);
+}
