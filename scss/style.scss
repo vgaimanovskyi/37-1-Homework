@@ -1,9 +1,24 @@
 @import '_reset';
 
+body {
+    background-image: url(../images/body.jpg);
+    background-position: center;
+    background-size: cover;
+}
 .mainer {
     max-width: 1110px;
     padding: 0 15px;
     margin: 0 auto;
+}
+.svg-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    &--size {
+        width: 15px;
+        height: 15px;
+    }
 }
 .table-block {
     
@@ -20,7 +35,9 @@
     min-height: 1800px;
     margin: 50px 0;
     padding: 250px 15px 15px 15px;
-    background-color: green;
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
     border: 10px solid rgb(49, 5, 5);
     border-radius: 10px;
     position: relative;
@@ -33,7 +50,8 @@
         font-size: 64px;
         font-weight: bold;
         letter-spacing: 5px;
-        color: yellow;
+        color: #fff;
+        text-shadow: 0 0 40px #000;
         text-align: center;
         text-transform: uppercase;
         display: none;
@@ -87,10 +105,14 @@
             background-image: url(../images/rubashka.jpg);
             background-size: cover;
             background-position: center;
+
+            &:hover {
+                box-shadow: 0 0 15px yellow;
+            }
         }
         &__back {
-            padding: 5px 20px;
-            background-color: #fff;
+            padding: 20px;
+            background-image: linear-gradient(45deg, rgba(133,133,133,1) 0%, rgba(170,180,181,1) 15%, rgba(235,241,254,1) 50%, rgba(170,180,181,1) 85%, rgba(133,133,133,1) 100%);
             transform: rotateY(180deg);
             position: relative;
 
@@ -108,7 +130,7 @@
             .picture {
                 display: flex;
                 justify-content: center;
-                text-align: center;
+                align-items: center;
                 flex-wrap: wrap;
                 position: relative;
                 height: 100%;
@@ -116,40 +138,43 @@
                 .suit {
                     width: 50%;
                     height: max-content;
+                    margin: 5px 0;
                     box-sizing: border-box;
-                    font-size: 48px;
-                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
                     &--rotate { transform: rotate(180deg); }
                     &--rotate-between {
                         position: absolute;
                         left: 50%;
-                        bottom: 0;
-                        transform: translate(-50%, -100%) rotate(180deg);
+                        bottom: 45px;
+                        transform: translateX(-50%) rotate(180deg);
                     }
 
                     &--rotate-between-center {
                         position: absolute;
                         left: 50%;
-                        bottom: 0;
-                        transform: translate(-50%, -50%) rotate(180deg);
+                        bottom: 30px;
+                        transform: translateX(-50%) rotate(180deg);
                     }
                     &--between {
                         position: absolute;
                         left: 50%;
-                        top: 0;
-                        transform: translate(-50%, 100%);
+                        top: 45px;
+                        transform: translateX(-50%);
                     }
                     &--center {
                         position: absolute;
                         left: 50%;
-                        top: 47%;
+                        top: 50%;
                         transform: translate(-50%, -50%);
                     }
                     &--between-center {
                         position: absolute;
                         left: 50%;
-                        top: 0;
-                        transform: translate(-50%, 50%);
+                        top: 30px;
+                        transform: translateX(-50%);
                     }                    
                 }
                 .tuz {
@@ -165,27 +190,25 @@
                     background-position: center;
                     background-repeat: no-repeat;
 
-                    &--js { background-image: url(../images/jack-spade.png); }
-                    &--qs { background-image: url(../images/queen-spade.png); }
-                    &--ks { background-image: url(../images/king-spade.png); }
-                    &--jh { background-image: url(../images/jack-heart.png); }
-                    &--qh { background-image: url(../images/queen-heart.png); }
-                    &--kh { background-image: url(../images/king-heart.png); }
-                    &--jc { background-image: url(../images/jack-club.png); }
-                    &--qc { background-image: url(../images/queen-club.png); }
-                    &--kc { background-image: url(../images/king-club.png); }
-                    &--jd { background-image: url(../images/jack-diamond.png); }
-                    &--qd { background-image: url(../images/queen-diamond.png); }
-                    &--kd { background-image: url(../images/king-diamond.png); }
+                    &--jd { background-image: url(../images/targaryen/j.jpg); }
+                    &--qd { background-image: url(../images/targaryen/q.jpg); }
+                    &--kd { background-image: url(../images/targaryen/k.jpg); }
+                    &--td { background-image: url(../images/house/targaryen-house.svg); }
+                    &--jl { background-image: url(../images/Lannister/j.jpg); }
+                    &--ql { background-image: url(../images/Lannister/q.jpg); }
+                    &--kl { background-image: url(../images/Lannister/k.jpg); }
+                    &--tl { background-image: url(../images/house/lannister-house.svg); }
+                    &--js { background-image: url(../images/stark/j.jpg); }
+                    &--qs { background-image: url(../images/stark/q.jpg); }
+                    &--ks { background-image: url(../images/stark/k.jpeg); }
+                    &--ts { background-image: url(../images/house/stark-house.svg); }
+                    &--jt { background-image: url(../images/tyrell/j.jpg); }
+                    &--qt { background-image: url(../images/tyrell/q.jpg); }
+                    &--kt { background-image: url(../images/tyrell/k.jpg); }
+                    &--tt { background-image: url(../images/house/tyrell-house.svg); }
                 }
             }
         }
-        /* &:hover {
-            animation: cardRotate 1s ease;
-
-            .card__front { transform: rotateY(180deg); }
-            .card__back { transform: rotateY(360deg); }
-        } */
     }
 }
 .modal {
@@ -209,7 +232,8 @@
         font-size: 64px;
         font-weight: bold;
         letter-spacing: 5px;
-        color: yellow;
+        color: #fff;
+        text-shadow: 0 0 40px #000;
         text-align: center;
         text-transform: uppercase;
     }

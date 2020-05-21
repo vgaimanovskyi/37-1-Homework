@@ -1,5 +1,5 @@
 body {
-  background: #752b2b;
+  background: #000;
   text-decoration: none;
   width: 100%;
   height: 100%;
@@ -46,10 +46,27 @@ h1, h2 {
   color: #545454;
 }
 
+body {
+  background-image: url(../images/body.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 .mainer {
   max-width: 1110px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.svg-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.svg-icon--size {
+  width: 15px;
+  height: 15px;
 }
 
 .table-block::after {
@@ -65,7 +82,9 @@ h1, h2 {
   min-height: 1800px;
   margin: 50px 0;
   padding: 250px 15px 15px 15px;
-  background-color: green;
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
   border: 10px solid #310505;
   border-radius: 10px;
   position: relative;
@@ -79,7 +98,8 @@ h1, h2 {
   font-size: 64px;
   font-weight: bold;
   letter-spacing: 5px;
-  color: yellow;
+  color: #fff;
+  text-shadow: 0 0 40px #000;
   text-align: center;
   text-transform: uppercase;
   display: none;
@@ -123,12 +143,6 @@ h1, h2 {
           perspective: 1000px;
   margin: 15px 0;
   cursor: pointer;
-  /* &:hover {
-            animation: cardRotate 1s ease;
-
-            .card__front { transform: rotateY(180deg); }
-            .card__back { transform: rotateY(360deg); }
-        } */
 }
 
 .table .card--dark {
@@ -159,9 +173,14 @@ h1, h2 {
   background-position: center;
 }
 
+.table .card__front:hover {
+  -webkit-box-shadow: 0 0 15px yellow;
+          box-shadow: 0 0 15px yellow;
+}
+
 .table .card__back {
-  padding: 5px 20px;
-  background-color: #fff;
+  padding: 20px;
+  background-image: linear-gradient(45deg, #858585 0%, #aab4b5 15%, #ebf1fe 50%, #aab4b5 85%, #858585 100%);
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   position: relative;
@@ -209,7 +228,9 @@ h1, h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
@@ -221,9 +242,18 @@ h1, h2 {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  margin: 5px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .table .card__back .picture .suit--rotate {
@@ -234,31 +264,31 @@ h1, h2 {
 .table .card__back .picture .suit--rotate-between {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  -webkit-transform: translate(-50%, -100%) rotate(180deg);
-          transform: translate(-50%, -100%) rotate(180deg);
+  bottom: 45px;
+  -webkit-transform: translateX(-50%) rotate(180deg);
+          transform: translateX(-50%) rotate(180deg);
 }
 
 .table .card__back .picture .suit--rotate-between-center {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  -webkit-transform: translate(-50%, -50%) rotate(180deg);
-          transform: translate(-50%, -50%) rotate(180deg);
+  bottom: 30px;
+  -webkit-transform: translateX(-50%) rotate(180deg);
+          transform: translateX(-50%) rotate(180deg);
 }
 
 .table .card__back .picture .suit--between {
   position: absolute;
   left: 50%;
-  top: 0;
-  -webkit-transform: translate(-50%, 100%);
-          transform: translate(-50%, 100%);
+  top: 45px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .table .card__back .picture .suit--center {
   position: absolute;
   left: 50%;
-  top: 47%;
+  top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -266,9 +296,9 @@ h1, h2 {
 .table .card__back .picture .suit--between-center {
   position: absolute;
   left: 50%;
-  top: 0;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  top: 30px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .table .card__back .picture .tuz {
@@ -287,52 +317,68 @@ h1, h2 {
   background-repeat: no-repeat;
 }
 
-.table .card__back .picture .img--js {
-  background-image: url(../images/jack-spade.png);
-}
-
-.table .card__back .picture .img--qs {
-  background-image: url(../images/queen-spade.png);
-}
-
-.table .card__back .picture .img--ks {
-  background-image: url(../images/king-spade.png);
-}
-
-.table .card__back .picture .img--jh {
-  background-image: url(../images/jack-heart.png);
-}
-
-.table .card__back .picture .img--qh {
-  background-image: url(../images/queen-heart.png);
-}
-
-.table .card__back .picture .img--kh {
-  background-image: url(../images/king-heart.png);
-}
-
-.table .card__back .picture .img--jc {
-  background-image: url(../images/jack-club.png);
-}
-
-.table .card__back .picture .img--qc {
-  background-image: url(../images/queen-club.png);
-}
-
-.table .card__back .picture .img--kc {
-  background-image: url(../images/king-club.png);
-}
-
 .table .card__back .picture .img--jd {
-  background-image: url(../images/jack-diamond.png);
+  background-image: url(../images/targaryen/j.jpg);
 }
 
 .table .card__back .picture .img--qd {
-  background-image: url(../images/queen-diamond.png);
+  background-image: url(../images/targaryen/q.jpg);
 }
 
 .table .card__back .picture .img--kd {
-  background-image: url(../images/king-diamond.png);
+  background-image: url(../images/targaryen/k.jpg);
+}
+
+.table .card__back .picture .img--td {
+  background-image: url(../images/house/targaryen-house.svg);
+}
+
+.table .card__back .picture .img--jl {
+  background-image: url(../images/Lannister/j.jpg);
+}
+
+.table .card__back .picture .img--ql {
+  background-image: url(../images/Lannister/q.jpg);
+}
+
+.table .card__back .picture .img--kl {
+  background-image: url(../images/Lannister/k.jpg);
+}
+
+.table .card__back .picture .img--tl {
+  background-image: url(../images/house/lannister-house.svg);
+}
+
+.table .card__back .picture .img--js {
+  background-image: url(../images/stark/j.jpg);
+}
+
+.table .card__back .picture .img--qs {
+  background-image: url(../images/stark/q.jpg);
+}
+
+.table .card__back .picture .img--ks {
+  background-image: url(../images/stark/k.jpeg);
+}
+
+.table .card__back .picture .img--ts {
+  background-image: url(../images/house/stark-house.svg);
+}
+
+.table .card__back .picture .img--jt {
+  background-image: url(../images/tyrell/j.jpg);
+}
+
+.table .card__back .picture .img--qt {
+  background-image: url(../images/tyrell/q.jpg);
+}
+
+.table .card__back .picture .img--kt {
+  background-image: url(../images/tyrell/k.jpg);
+}
+
+.table .card__back .picture .img--tt {
+  background-image: url(../images/house/tyrell-house.svg);
 }
 
 .modal {
@@ -358,7 +404,8 @@ h1, h2 {
   font-size: 64px;
   font-weight: bold;
   letter-spacing: 5px;
-  color: yellow;
+  color: #fff;
+  text-shadow: 0 0 40px #000;
   text-align: center;
   text-transform: uppercase;
 }
